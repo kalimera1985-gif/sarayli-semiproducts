@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /CNAME
+Disallow: /.github/
+Disallow: /README.md
+
+Sitemap: https://sarayli.kz/sitemap.xml

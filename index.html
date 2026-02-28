@@ -15,11 +15,14 @@
   <meta property="og:url" content="https://sarayli.kz"/>
   <meta property="og:type" content="website"/>
 
-  <!-- Favicon (замените на свой файл) -->
+  <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
 
-  <!-- Цвет темы для мобильных браузеров -->
+  <!-- Theme color -->
   <meta name="theme-color" content="#c62828"/>
+
+  <!-- Preload hero -->
+  <link rel="preload" as="image" href="https://i.ibb.co/4zd8pjm/500.png">
 
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -48,7 +51,7 @@
   </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/107051685" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
-  <!-- reCAPTCHA v3 (скрытая) — ваш Site key вставлен -->
+  <!-- reCAPTCHA v3 -->
   <script src="https://www.google.com/recaptcha/api.js?render=6LcNGXssAAAAAIyIViWSGEut1xlKuAZ61pwA2pda"></script>
 
   <style>
@@ -117,35 +120,24 @@
       color: white;
       position: relative;
     }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(198,40,40,0.12);
-    }
-    .hero h1 {
-      font-size: 5rem;
-      font-weight: 800;
-      margin-bottom: 1.2rem;
-      text-shadow: 0 6px 25px rgba(0,0,0,0.8);
+    .hero::before { content: ''; position: absolute; inset: 0; background: rgba(198,40,40,0.12); }
+    .hero h1 { font-size: 5rem; font-weight: 800; margin-bottom: 1rem; text-shadow: 0 6px 25px rgba(0,0,0,0.8); z-index: 2; }
+    .hero p { font-size: 1.9rem; max-width: 1100px; margin: 0 auto 1.5rem; z-index: 2; }
+    .hero .btn-hero {
+      background: #25D366;
+      color: white;
+      padding: 1.4rem 3rem;
+      border-radius: 50px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
       z-index: 2;
     }
-    .hero p {
-      font-size: 1.9rem;
-      max-width: 1100px;
-      margin: 0 auto 2.8rem;
-      z-index: 2;
-    }
+    .hero .btn-hero:hover { background: #1ebe52; transform: scale(1.08); }
 
     main { max-width: 1480px; margin: 0 auto; padding: 5rem 5vw 10rem; }
-
-    h2 { 
-      font-size: 3.4rem; 
-      color: #c62828; 
-      margin-bottom: 2.8rem; 
-      text-align: center; 
-      font-weight: 700;
-    }
+    h2 { font-size: 3.4rem; color: #c62828; margin-bottom: 2.8rem; text-align: center; font-weight: 700; }
 
     /* Swiper */
     .products-section { margin: 7rem 0; }
@@ -160,25 +152,12 @@
       box-shadow: 0 12px 40px rgba(0,0,0,0.12);
       transition: all 0.45s ease;
     }
-    .card:hover {
-      transform: translateY(-18px) scale(1.05);
-      box-shadow: 0 25px 70px rgba(0,0,0,0.22);
-    }
-    .card img {
-      width: 100%;
-      height: 340px;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
+    .card:hover { transform: translateY(-18px) scale(1.05); box-shadow: 0 25px 70px rgba(0,0,0,0.22); }
+    .card img { width: 100%; height: 340px; object-fit: cover; transition: transform 0.6s ease; }
     .card:hover img { transform: scale(1.09); }
     .card-content { padding: 2rem 1.8rem; text-align: center; }
     .card h3 { font-size: 1.65rem; margin-bottom: 1rem; color: #222; }
-    .price {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: #c62828;
-      margin: 1rem 0 1.5rem;
-    }
+    .price { font-size: 2.2rem; font-weight: 800; color: #c62828; margin: 1rem 0 1.5rem; }
     .btn {
       display: inline-block;
       background: #c62828;
@@ -197,6 +176,59 @@
 
     .swiper-button-next, .swiper-button-prev { color: #c62828 !important; font-size: 28px !important; }
     .swiper-pagination-bullet-active { background: #c62828 !important; }
+
+    /* Форма */
+    .form-section {
+      max-width: 600px;
+      margin: 6rem auto;
+      padding: 3rem;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .form-section h2 { margin-bottom: 2rem; }
+    .form-section input, .form-section button {
+      width: 100%;
+      padding: 1.2rem;
+      margin: 1rem 0;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      font-size: 1.1rem;
+    }
+    .form-section button {
+      background: #c62828;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .form-section button:hover { background: #a51f22; }
+
+    /* Отзывы */
+    .reviews-section {
+      margin: 7rem 0;
+      text-align: center;
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+    .review-card {
+      background: #f9f9f9;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+    .review-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+    }
 
     footer {
       background: #f9f9f9;
@@ -230,6 +262,7 @@
     <div>
       <h1>SARAYLI</h1>
       <p>Оптовый цех свежих натуральных полуфабрикатов в Астане<br>100% халяль · без консервантов · поставки для магазинов и сетей</p>
+      <a href="https://wa.me/77786510556?text=Хочу сделать заказ" target="_blank" class="btn btn-hero">Заказать в WhatsApp</a>
     </div>
   </div>
 
@@ -343,7 +376,40 @@
       </div>
     </div>
 
-    <!-- Здесь можно добавить форму заказа, отзывы, оптовое предложение и т.д. -->
+    <!-- Форма заказа -->
+    <div class="form-section">
+      <h2>Быстрый заказ</h2>
+      <form id="order-form" action="https://formspree.io/f/mlgwoaqn" method="POST">
+        <input type="text" name="name" placeholder="Ваше имя" required>
+        <input type="tel" name="phone" placeholder="Телефон" required>
+        <input type="text" name="message" placeholder="Что хотите заказать?">
+        <input type="hidden" name="g-recaptcha-response" id="recaptchaResponse">
+        <button type="submit" class="btn">Отправить заказ</button>
+      </form>
+      <p style="margin-top:1.5rem; font-size:1rem; color:#666;">Мы свяжемся с вами в течение 15 минут</p>
+    </div>
+
+    <!-- Отзывы -->
+    <div class="reviews-section">
+      <h2>Что говорят наши клиенты</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <img src="https://i.pravatar.cc/80?img=1" alt="Отзыв клиента">
+          <p>«Манты просто огонь! Свежие, сочные, как дома. Заказываем уже третий раз»</p>
+          <strong>Айгуль, Астана</strong>
+        </div>
+        <div class="review-card">
+          <img src="https://i.pravatar.cc/80?img=2" alt="Отзыв клиента">
+          <p>«Для магазина берём оптом пельмени и самсу. Качество стабильное, возвратов почти нет»</p>
+          <strong>Менеджер MyMart</strong>
+        </div>
+        <div class="review-card">
+          <img src="https://i.pravatar.cc/80?img=3" alt="Отзыв клиента">
+          <p>«Очень вкусно и быстро доставили. Теперь только у них берём вареники»</p>
+          <strong>Ерлан, Астана</strong>
+        </div>
+      </div>
+    </div>
 
   </main>
 
@@ -358,7 +424,7 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <script>
-    // Preloader + плавное появление контента
+    // Preloader + плавное появление
     window.addEventListener('load', function() {
       const preloader = document.getElementById('preloader');
       setTimeout(() => {
@@ -374,20 +440,9 @@
       spaceBetween: 30,
       loop: true,
       speed: 800,
-      autoplay: {
-        delay: 4500,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        dynamicBullets: true
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      },
+      autoplay: { delay: 4500, disableOnInteraction: false, pauseOnMouseEnter: true },
+      pagination: { el: '.swiper-pagination', clickable: true, dynamicBullets: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
       breakpoints: {
         640:  { slidesPerView: 2, spaceBetween: 20  },
         1024: { slidesPerView: 3, spaceBetween: 30  },
@@ -396,41 +451,33 @@
     });
     if (swiper.autoplay) swiper.autoplay.start();
 
-    // GA4 + Yandex.Metrica события
+    // Трекинг звонков и WhatsApp
     document.querySelectorAll('.track-phone').forEach(el => {
       el.addEventListener('click', () => {
-        gtag('event', 'phone_call', { 
-          'event_category': 'Contact', 
-          'event_label': 'Phone Button',
-          'value': 1 
-        });
-        // ym(107051685, 'reachGoal', 'phone_call'); // если хотите цель в Метрике
+        gtag('event', 'phone_call', { 'event_category': 'Contact', 'value': 1 });
       });
     });
 
     document.querySelectorAll('.track-whatsapp').forEach(el => {
       el.addEventListener('click', () => {
-        gtag('event', 'whatsapp_click', { 
-          'event_category': 'Contact', 
-          'event_label': 'WhatsApp Button',
-          'value': 1 
-        });
-        // ym(107051685, 'reachGoal', 'whatsapp_click');
+        gtag('event', 'whatsapp_click', { 'event_category': 'Contact', 'value': 1 });
       });
     });
 
-    // Пример: получение токена reCAPTCHA v3 при клике на кнопку (можно привязать к форме)
-    // document.querySelector('.some-submit-btn')?.addEventListener('click', function(e) {
-    //   e.preventDefault();
-    //   grecaptcha.ready(function() {
-    //     grecaptcha.execute('6LcNGXssAAAAAIyIViWSGEut1xlKuAZ61pwA2pda', {action: 'submit'}).then(function(token) {
-    //       console.log('reCAPTCHA token:', token);
-    //       // здесь можно добавить token в скрытое поле формы
-    //       // document.querySelector('[name="g-recaptcha-response"]').value = token;
-    //       // затем отправить форму
-    //     });
-    //   });
-    // });
+    // reCAPTCHA v3 + отправка формы
+    const orderForm = document.getElementById('order-form');
+    if (orderForm) {
+      orderForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6LcNGXssAAAAAIyIViWSGEut1xlKuAZ61pwA2pda', {action: 'submit'}).then(function(token) {
+            document.getElementById('recaptchaResponse').value = token;
+            gtag('event', 'form_submit', { 'event_category': 'Lead', 'value': 5 });
+            orderForm.submit(); // отправка формы в Formspree
+          });
+        });
+      });
+    }
   </script>
 
 </body>
